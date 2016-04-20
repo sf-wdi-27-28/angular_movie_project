@@ -1,4 +1,4 @@
-angular.module('your-app-name-goes-here', []);
+angular.module('movieApp', []);
        //.config(config);
 
 

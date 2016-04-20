@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> <!-- this should have an ng-app -->
+<html ng-app="movieApp">
 <head>
   <title></title>
   <meta charset="utf8" />
@@ -16,9 +16,25 @@
   <script src="scripts/controllers/moviesIndex.controller.js"></script>
 </head>
 <body>
+
+
   <div class="container-fluid">
+    <div class="page-header">
+      <h1>Movies Search </h1>
+    </div>
+
     <div class='row'>
-      <div class="col-md-6"><h1>Everything is great!</h1></div>
+      <div class="col-md-offset-3 col-md-6">
+        <form class="form-horizontal">
+          <div class="form-group col-md-10">
+            <label class="sr-only" for="search">Movie Name</label>
+            <input type="text" class="form-control" id="search" placeholder="The Neverending Story">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-default">Search</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </body>
