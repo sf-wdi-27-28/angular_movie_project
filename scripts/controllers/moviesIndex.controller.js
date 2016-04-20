@@ -1,20 +1,17 @@
 angular.module('your-app-name-goes-here')
-  .controller('this-controller-goes-here', ThisController);
+  .controller('MoviesIndexController', MoviesIndexController);
 
-ThisController.$inject=[];
-function BooksIndexController( BookService) {
+MoviesIndexController.$inject=[];
+function MoviesIndexController( BookService) {
   var vm = this;
   // exports
-  vm.books = [];
+  vm.movies = [];
+  vm.helloWorld = 'hello world';
 
-  // initialize data
-  getBooks();
+  // initialization
+  console.log(vm.helloWorld);
 
   // implementations
-  function getBooks() {
-    BookService.query().then(function(data){
-      console.log('here\'s the books data in the controller', data);
-      vm.books = data;
-    });
+  function search() {
   }
 }
