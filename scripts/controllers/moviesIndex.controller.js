@@ -8,6 +8,8 @@ function MoviesIndexController() {
   vm.movies = [];
   vm.helloWorld = 'hello world';
   vm.search = search;
+  vm.searchTerm = "";
+
 
   // initialization
   console.log(vm.helloWorld);
@@ -15,5 +17,6 @@ function MoviesIndexController() {
   // implementations
   function search() {
     console.log('search called');
+    console.log("Search term = ", vm.searchTerm);
   }
 }
