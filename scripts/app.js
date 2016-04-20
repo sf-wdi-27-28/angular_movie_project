@@ -1,5 +1,6 @@
 angular.module('movieApp', []);
-       //.config(config);
+      //  .config(config)
+
 
 
 ////////////
