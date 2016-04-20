@@ -1,5 +1,5 @@
-angular.module('your-app-name-goes-here', [])
-       .config(config);
+angular.module('your-app-name-goes-here', []);
+       //.config(config);
 
 
 ////////////
