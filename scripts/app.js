@@ -15,6 +15,11 @@ function config (  $routeProvider,   $locationProvider  )  {
       controller: 'MoviesIndexController',
       controllerAs: 'moviesIndexCtrl'
     })
+    .when('/movies/:imdbID', {
+      templateUrl: '/templates/movies-show.template.html',
+      controller: 'MoviesShowController',
+      controllerAs: 'moviesShowCtrl'
+    })
     .otherwise({
       redirectTo: '/movies'
     });

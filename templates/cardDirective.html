@@ -1,6 +1,6 @@
 <div class="card">
   <img class="center-block img-responsive" ng-hide="movie.Poster === 'N/A'" ng-src="{{movie.Poster}}" alt="movie poster" />
   <img class="center-block img-responsive" ng-show="movie.Poster === 'N/A'" src="http://info.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="" />
-  <h3>{{movie.Title}}</h3>
+  <h3><a ng-href="/movies/{{movie.imdbID}}"> {{movie.Title}}</a></h3>
   <p>Released: {{movie.Year}}</p>
 </div>
