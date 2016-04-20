@@ -1,1 +1,16 @@
-<p> hi from movies show template </p>
+<div class="row">
+  <div class="col-sm-12 col-md-8 col-md-offset-4">
+    <div class="thumbnail">
+      <img src="{{moviesShowCtrl.movie.Poster}}" alt="{{moviesShowCtrl.movie.Title}}">
+      <div class="caption">
+        <h3>{{moviesShowCtrl.movie.Title}}</h3>
+        <ul>
+          <li>Director: {{moviesShowCtrl.movie.Director}}</li>
+          <li>Writer: {{moviesShowCtrl.movie.Writer}}</li>
+          <li>Year: {{moviesShowCtrl.movie.Year}}</li>
+        </ul>
+        <p><a ng-href="/movies" class="btn btn-primary" role="button">Back</a></p>
+      </div>
+    </div>
+  </div>
+</div>
