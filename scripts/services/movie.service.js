@@ -4,6 +4,40 @@ angular.module('movieApp')
 MovieService.$inject = ['$http', '$q'];
 function MovieService(   $http,   $q) {
   this.get = goGetAMovie;
+  this.query = query;
+
+
+  function query(searchTerm) {
+    console.log("Search term = ", searchTerm);
+    var url = "http://www.omdbapi.com/?s=" + searchTerm;
+    console.log('url = ', url);
+
+    var def = $q.defer();
+
+
+    $http({
+      method: 'GET',
+      url: url
+    }).then(searchSuccessHandler,
+            function(err) {
+              console.log('ermagerd!', err);
+              def.reject({error: 'error'});
+            }
+          );
+
+
+    return def.promise;
+
+
+
+    function searchSuccessHandler(response) {
+      console.log('got response', response);
+      console.log('search:', response.data.Search);
+      def.resolve(response.data.Search);
+    }
+
+
+  }
 
   function goGetAMovie(movieId) {
     // create the deferred

@@ -1,11 +1,11 @@
 angular.module('movieApp')
   .controller('MoviesIndexController', MoviesIndexController);
 
-MoviesIndexController.$inject=['$http'];
-function MoviesIndexController( $http ) {
+MoviesIndexController.$inject=['MovieService'];
+function MoviesIndexController( MovieService ) {
   var vm = this;
   // exports
-  vm.movies = [];
+  vm.movieList = [];
   vm.helloWorld = 'hello world';
   vm.search = search;
   vm.searchTerm = "";
@@ -18,18 +18,10 @@ function MoviesIndexController( $http ) {
   function search() {
     console.log('search called');
     console.log("Search term = ", vm.searchTerm);
-    var url = "http://www.omdbapi.com/?s=" + vm.searchTerm;
-    console.log('url = ', url);
-
-    $http({
-      method: 'GET',
-      url: url
-    }).then(searchSuccessHandler, function(err) { console.log('ermagerd!', err); });
-
-    function searchSuccessHandler(response) {
-      console.log('got response', response);
-      vm.movieList = response.data.Search;
-    }
+    MovieService.query(vm.searchTerm).then(function (movies) {
+      console.log('movies from the controller', movies);
+      vm.movieList = movies;
+    });
 
   }
 }
